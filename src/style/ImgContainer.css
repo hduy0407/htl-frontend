@@ -1,0 +1,80 @@
+.slider {
+    width: 100%;
+    height: var(--height);
+    overflow: hidden ;
+    mask-image: linear-gradient(
+        to right,
+        transparent,
+        #000 10% 90%,
+        transparent
+    );
+    background-image: url(https://scontent.fqlf1-2.fna.fbcdn.net/v/t39.30808-6/469598093_122124928868552719_834437721828494957_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=127cfc&_nc_ohc=EITxNJ9pcjUQ7kNvgFUY0As&_nc_oc=AdjWRaAWfEIOIV_3OZs9vRnE4FZ5gizcAsZ9wTfbLn4Gl9E0MDLhH0XLlHYpEZHQk0M&_nc_zt=23&_nc_ht=scontent.fqlf1-2.fna&_nc_gid=AWquNv6gKuSnRoxWhaJ-VCs&oh=00_AYAj7RU_mFh-L8liWrQApl1Fjz3SjRFYJhhM6SP2WhvVqQ&oe=67BA3E5D);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.slider::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(90, 89, 89, 0.5); /* Dark overlay (adjust transparency as needed) */
+    z-index: 1;
+}
+
+.slider .list {
+    display: flex;
+    width: 100%;
+    min-width: calc(var(--width) * var(--quantity));
+    position: relative;
+    z-index: 2;
+}
+
+.slider .list .item {
+    width: var(--width);
+    height: var(--height);
+    position: absolute;
+    left: 100%;
+    animation: autoRun 9s linear infinite;
+    animation-delay: calc((9s / var(--quantity)) * (var(--position) - 1));
+}
+
+.slider .list .image {
+    width: var(--width);
+    height: var(--height);
+    position: absolute;
+    left: 100%;
+    animation: autoRun 13s linear infinite;
+    animation-delay: calc((13s / var(--quantity)) * (var(--position) - 1));
+}
+
+@keyframes autoRun {
+    from {
+        left: 100%;
+    }
+    to {
+        left: calc(var(--width) * -1);
+    }
+    
+}
+
+.slider .list .image img {
+    width: 100%;
+    border-radius: 15px;
+    box-shadow: #383838 2px 2px 2px 0px;   
+}
+
+.slider .list .item {
+    margin-top: 2px;
+    font-weight: bold;
+    font-style: italic;
+    color: #95a6df;
+}
+
+.slider:hover .item,
+.slider:hover .image {
+    animation-play-state: paused !important;
+}
