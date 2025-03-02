@@ -82,13 +82,10 @@ const Login = () => {
                                 onChange={handleChange} 
                                 required 
                             />
-                            <box-icon type='solid' name='lock-alt' className="icon"></box-icon>
+                            <box-icon type='solid' name='lock-alt' class="icon"></box-icon>
                         </div>
                         <div className="remember-forgot">
-                            <label>
-                                <input type="checkbox" /> Remember me
-                            </label>
-                            <a href="#">Forgot password?</a>
+                            <a href="/forgot-password">Forgot password?</a>
                         </div>
                         
                         <button type="submit" className="btn">Login</button>

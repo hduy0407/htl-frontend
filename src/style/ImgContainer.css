@@ -8,7 +8,7 @@
         #000 10% 90%,
         transparent
     );
-    background-image: url(https://scontent.fqlf1-2.fna.fbcdn.net/v/t39.30808-6/469598093_122124928868552719_834437721828494957_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=127cfc&_nc_ohc=EITxNJ9pcjUQ7kNvgFUY0As&_nc_oc=AdjWRaAWfEIOIV_3OZs9vRnE4FZ5gizcAsZ9wTfbLn4Gl9E0MDLhH0XLlHYpEZHQk0M&_nc_zt=23&_nc_ht=scontent.fqlf1-2.fna&_nc_gid=AWquNv6gKuSnRoxWhaJ-VCs&oh=00_AYAj7RU_mFh-L8liWrQApl1Fjz3SjRFYJhhM6SP2WhvVqQ&oe=67BA3E5D);
+    background-image: url('/assets/backgroundlogin.jpg');
     background-size: cover;
     background-position: center;
     position: relative;
