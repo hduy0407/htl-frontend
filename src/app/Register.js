@@ -28,6 +28,11 @@ const Register = () => {
 
         let endpoint = "/api/users"
 
+        if (password.length < 8) {
+            setMessage("Password must be at least 8 characters long");
+            return;
+        }
+
         if (accessKey === process.env.REACT_APP_ACCESS_KEY_ADMIN) {
             endpoint = "/api/users/admin"
         } else if (accessKey !== process.env.REACT_APP_ACCESS_KEY) {

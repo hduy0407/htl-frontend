@@ -26,7 +26,7 @@ function App() {
           <Route path="/staffpage" element={<StaffPage />} />
           <Route path="/confirmation" element={<ConfirmationPage />} />
           <Route path="/forgot-password" element={<ForgotPassword />} />
-          <Route path="/reset-password" element={<ResetPassword />} />
+          <Route path="/reset-password/:token" element={<ResetPassword />} />
         </Routes>
       </Router>
     </div>
