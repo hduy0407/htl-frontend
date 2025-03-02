@@ -7,7 +7,7 @@ import '../style/Login.css'
 const baseUrl = process.env.REACT_APP_BASE_URL;
 
 const Register = () => {
-
+    const [message, setMessage] = useState("");
     const [formData, setFormData] = useState({
         name: "",
         email: "",
