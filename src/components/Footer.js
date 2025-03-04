@@ -13,7 +13,7 @@ const Footer = () => {
         <footer className="footer">
             <div className='row'>
                 <div className='col '>
-                    <img src='/assets/logo.png' className='logo' alt='logo'></img>
+                    <img src='/logo.png' className='logo' alt='logo'></img>
                     <p>Hãy tham gia ngay, để trải nghiệm sân pickleball và nhiều dịch vụ khác.</p>
                 </div>
                 <div className='col'>

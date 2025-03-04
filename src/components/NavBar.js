@@ -12,7 +12,7 @@ export default function NavBar() {
     return (
         <div>
             <div className="navbar">
-                <h2 className="logo">HTL</h2>
+                <h2 className="logo"><a href="/">HTL</a></h2>
                 <ul className="links">
                     <li><a href="/">Trang Chủ</a></li>
                     <li><a href="/booking">Đặt Sân</a></li>
