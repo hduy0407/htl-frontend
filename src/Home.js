@@ -1,6 +1,9 @@
 import './style/Home.css';
 import NavBar from './components/NavBar';
 import './style/ImgContainer.css';
+import Footer from './components/Footer';
+import PriceBoard from './components/PriceBoard';
+import Location from './components/Location';
 
 
 function Home() {
@@ -21,6 +24,10 @@ function Home() {
           </div>
         </div>
       </div>
+      <Location />
+      <hr className="custom-hr" />
+      <PriceBoard />
+      <Footer />
     </div>
   );
 }

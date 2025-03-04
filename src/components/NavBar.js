@@ -31,7 +31,7 @@ export default function NavBar() {
                 <ul className="links">
                     <li><a href="/">Trang Chủ</a></li>
                     <li><a href="/booking">Đặt Sân</a></li>
-                    <li><a href="/about">Về Chúng Tôi</a></li>
+                    <li><a href="/about">Giới thiệu</a></li>
                 </ul>
                 <li className="login">
                     <a className="btn" href="/login"><FontAwesomeIcon icon={faUser} /></a>

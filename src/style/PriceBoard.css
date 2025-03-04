@@ -1,0 +1,59 @@
+/* Main container style */
+.page-priceboard {
+    background-color: #e5e6eb;
+    padding: 20px;
+    text-align: center;
+    min-height: 100vh;
+}
+  
+/* Title band */
+.title-band {
+    width: fit-content;
+    background: linear-gradient(to right, transparent, #293576 30%, #293576 70%, transparent);
+    padding: 10px 40px; /* Add horizontal padding to make it look better */
+    margin: 0 auto 20px auto; /* Center the band */
+    text-align: center;
+    color: #fff; /* Ensure text remains visible */
+    font-weight: bold;
+    border-radius: 8px; /* Optional: Adds rounded corners */
+}
+
+  
+  /* Title inside the band */
+.title-band h3 {
+    font-size: 2rem;
+    color: #fff; /* White text for contrast */
+    margin: 0;
+    font-weight: bold;
+    text-align: center;
+}
+  
+  /* Container for image */
+.container-priceboard {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+}
+  
+  /* Style for the price board image */
+.price-board {
+    max-width: 70%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+  
+@media screen and (max-width: 768px) {
+    .price-board {
+        max-width: 90%; /* Keeps the image within 90% width */
+    }
+    .page-priceboard {
+        min-height: auto; /* Allows the height to shrink proportionally */
+        padding: 10px;
+    }
+    .title-band h3 {
+        font-size: 1.5rem;
+    }
+}
+  

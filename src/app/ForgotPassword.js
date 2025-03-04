@@ -1,5 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
+import '../style/ForgotPassword.css'
 
 const baseUrl = process.env.REACT_APP_BASE_URL;
 
@@ -20,13 +21,24 @@ const ForgotPassword = () => {
     };
 
     return (
-        <div>
-            <h2>Forgot Password</h2>
-            <form onSubmit={handleSubmit}>
-                <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Enter email" required />
-                <button type="submit">Send Reset Link</button>
-            </form>
-            {message && <p>{message}</p>}
+        <div id="forgot-password-page">
+            <div className="forgot-password-body">
+                <div className="wrapper-box">
+                    <h2>Quên mật khẩu</h2>
+                    <h4>Nhập email của bạn</h4>
+                    <form onSubmit={handleSubmit} className="forgot-password-form">
+                        <input 
+                            type="email" 
+                            value={email} 
+                            onChange={(e) => setEmail(e.target.value)} 
+                            placeholder="Nhập email của bạn" 
+                            required 
+                        />
+                        <button type="submit" className="btn">Gửi Link</button>
+                    </form>
+                    {message && <p>{message}</p>}
+                </div>
+            </div>
         </div>
     );
 };

@@ -249,3 +249,13 @@ button:hover {
 .dropdown_menu {
   display: block;
 }
+
+.custom-hr {
+  width: 80%; /* Adjust this width to control how long the line is */
+  margin: 0 auto; /* Centers the line horizontally and removes top/bottom space */
+  padding: 0; /* Removes any padding */
+  border: 0; /* Removes default border */
+  border-top: 2px solid #2e406a; /* Adds a solid blue line, you can change the color */
+  
+}
+

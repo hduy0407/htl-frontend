@@ -1,81 +1,90 @@
 /* General body and layout */
 #book-page {
     font-family: Arial, sans-serif;
-    background: url('/assets/backgroundbookingpage.jpg') no-repeat;
+    background: linear-gradient(rgba(35, 35, 35, 0.215), rgba(60, 59, 59, 0.75)), url('/assets/backgroundbookingpage.jpg') no-repeat;
     background-size: cover;
     background-position: center;
-    height: 100vh; /* Ensure it covers the full screen height */
+    height: 100vh; 
     justify-content: center;
     align-items: center;
+    position: relative;
+}
+
+.body-book {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    height: auto; /* Adjust height based on content */
+    max-height: 90vh; /* Prevents overflow */
+    margin-top: 20px; 
+    margin: 0 auto; 
+    margin-top: 60px;
+}
+
+.wrapper-book {
+    width: 100%; /* Make it fill the .body-book container */
+    max-width: 500px; /* Set a reasonable max width */
+    background: rgba(255, 255, 255, 0.152);
+    padding: 20px;
+    border: 2px solid #e2e2e2;;
+    border-radius: 10px;
+    box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
+    text-align: center; /* Center content inside */
+    margin: 0 auto; /* Centers it horizontally */
+} 
+
+.book-form {
+    width: 100%; /* Ensure form takes full width inside wrapper */
+    display: flex;
+    flex-direction: column; /* Stack form elements vertically */
+    gap: 15px; /* Space between form elements */
     padding: 20px;
 }
 
-/* Form Container */
-.body-book {
-    background-color: rgba(255, 255, 255, 0.387); /* Light background with transparency */
-    width: 100%;
-    max-width: 600px;
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 
-    /* Center the form using absolute positioning */
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%); /* Centering the container */
-}
-
-/* Centering form title */
-.wrapper-book {
-    text-align: center;
-}
-
-/* Form Title */
 .book-form h1 {
     font-size: 28px;
-    font-weight: 600;
-    margin-bottom: 30px;
-    color: #333;
-}
-
-/* Input Box Styling */
-.inputbox {
+    font-weight: bold;
     margin-bottom: 20px;
-    text-align: left;
+    color: #e6e6e6;
+    text-align: center; /* Center the title */
 }
 
 .inputbox input,
 .inputbox select {
-    width: 100%;
+    width: 100%; /* Make inputs and select elements fill the available space */
     padding: 12px;
     font-size: 16px;
     border: 1px solid #ddd;
     border-radius: 5px;
     box-sizing: border-box;
-    background-color: #f9f9f9;
+    background-color: #f9f9f94a;
     transition: border-color 0.3s ease;
 }
+
 
 .inputbox input:focus,
 .inputbox select:focus {
     outline: none;
     border-color: #709fff;
-    background-color: #fff;
+    background-color: #ffffff22;
 }
 
-/* Labels Styling */
+/* Labels */
 .inputbox label {
     font-size: 16px;
     font-weight: 500;
     margin-bottom: 8px;
-    color: #303030;
+    color: #f8f8f8;
 }
 
+
 /* Button Styling */
-#book-page .body-book .wrapper-book .btn {
-    background-color: #007bff;
-    color: white;
+.book-form .btn {
+    background-color: #83ace5a5;
+    color: rgb(255, 255, 255);
     font-size: 16px;
     padding: 12px 24px;
     border: none;
@@ -85,50 +94,73 @@
     transition: background-color 0.3s ease;
 }
 
-#book-page .body-book .wrapper-book .btn:hover {
-    background-color: #0056b3;
+/* Button Hover Effect */
+.book-form .btn:hover {
+    background-color: rgba(197, 208, 231, 0.727);
+    color: #6381bc;
 }
 
 /* Placeholder Styling */
 .inputbox input::placeholder,
-.inputbox select::placeholder {
-    color: #aaa;
+.inputbox select::placeholder,
+.inputbox select::placeholder,
+.inputbox input[type="date"] {
+    color: #fcfcfc;
 }
 
-/* Select Dropdown Styling */
-.inputbox select {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 10 10'%3E%3Cpath fill='%23ccc' d='M2.5 3.5l2.5 2.5 2.5-2.5z'/%3E%3C/svg%3E");
-    background-position: right 10px center;
-    background-repeat: no-repeat;
-    padding-right: 40px;
+/* Time-box container for time selection */
+.time-box {
+    display: flex; /* Enable flexbox */
+    justify-content: space-between; /* Distribute items evenly with space between */
+    gap: 15px; /* Add space between the two inputs */
 }
 
-/* Responsive Styles */
-@media (max-width: 768px) {
-    .book-form {
-        padding: 20px;
-    }
+/* Modal overlay */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); /* Dark background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  /* Modal content */
+  .modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 90%;
+    max-height: 90%;
+    overflow: auto;
+    position: relative;
+  }
+  
+  /* Close button styling */
+  .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: transparent;
+    border: none;
+    font-size: 20px;
+    color: #333;
+    cursor: pointer;
+  }
+  
+  /* Priceboard image styling */
+  .priceboard-image {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
 
-    .btn {
-        font-size: 14px;
-    }
+  .time-box .inputbox select {
+    width: 100%; 
+    color: black;
 }
-
-@media (max-width: 480px) {
-    #book-page {
-        padding: 20px;
-    }
-
-    .book-form h1 {
-        font-size: 24px;
-    }
-
-    .btn {
-        font-size: 16px;
-    }
-}
-
 

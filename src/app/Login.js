@@ -77,7 +77,7 @@ const Login = () => {
                             <input 
                                 type="password" 
                                 name="password" 
-                                placeholder="Password" 
+                                placeholder="Mật Khẩu" 
                                 value={password} 
                                 onChange={handleChange} 
                                 required 
@@ -85,13 +85,13 @@ const Login = () => {
                             <box-icon type='solid' name='lock-alt' class="icon"></box-icon>
                         </div>
                         <div className="remember-forgot">
-                            <a href="/forgot-password">Forgot password?</a>
+                            <a href="/forgot-password">Quên mật khẩu?</a>
                         </div>
                         
-                        <button type="submit" className="btn">Login</button>
+                        <button type="submit" className="btn">Đăng nhập</button>
 
                         <div className="register-link">
-                            <p>Don't have an account? <Link to="/register">Register here</Link></p>
+                            <p>Không có tài khoản? <Link to="/register">Tạo tài khoản</Link></p>
                         </div>
                     </form>
                 </div>

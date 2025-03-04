@@ -1,0 +1,145 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+footer {
+    background: #eef8ff;
+    width: 100%;
+    position: relative;
+    bottom: 0;
+    background: linear-gradient(to right, #4e5398, #121323);
+    color: #e1e7ff;
+    padding: 30px 50px 10px;
+    font-size: 13px;
+    line-height: 20px;
+}
+
+footer .row {
+    width: 85;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+footer .row .col {
+    flex-basis: 25%;
+    padding: 10px;
+}
+
+footer .row .col:nth-child(2),
+footer .row .col:nth-child(3) {
+    flex-basis: 15%;
+}
+
+footer .row .col .logo {
+    width: 120px;
+    margin-bottom: 10px;
+}
+
+footer .row .col h3 {
+    width: fit-content;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+footer .row .col .email {
+    width: fit-content;
+    border-bottom: 1px solid ;
+    margin-top: 5px;
+}
+
+footer .row .col .email a,
+footer .row .col a {
+    text-decoration: none;
+    color: #e1e7ff;
+}
+
+footer .row .col ul li {
+    list-style: none;
+    margin-bottom: 12px;
+}
+
+footer .row .col ul li a {
+    text-decoration: none;
+    color: #e1e7ff;
+}
+
+.col .social-icon .fab {
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    line-height: 40px;
+    font-size: 20px;
+    color: #e1e7ff;
+    margin-right: 15px;
+    cursor: pointer;
+}
+
+
+.copyright {
+    text-align: center;
+    font-size: 14px;
+    margin: 10px 0;
+}
+
+footer hr {
+    width: 90%;
+    border: 0;
+    border-bottom: 1px solid #ccc;
+    margin: 20px auto;
+}
+
+.copyright {
+    text-align: center;
+}
+
+.underline {
+    width: 100%;
+    height: 5px;
+    background: #687288;
+    border-radius: 3px;
+    position: absolute;
+    top: 25px;
+    left: 0;
+    overflow: hidden;
+}
+
+.underline span {
+    width: 15px;
+    height: 100%;
+    background: #e1e7ff;
+    border-radius: 3px;
+    position: absolute;
+    top: 0;
+    left: 10px;
+    animation: moving 2s linear infinite;
+    z-index: 0;
+}
+
+@keyframes moving {
+    0% {
+        left: -20px;
+    } 
+    100% {
+        left: 100px
+    }
+}
+
+@media (max-width: 700px) {
+    footer {
+        bottom: unset;
+    }
+    footer .row .col {
+        flex-basis: 100%;
+    }
+    
+    footer .row .col:nth-child(2),
+    footer .row .col:nth-child(3) {
+        flex-basis: 100%;
+    }
+}

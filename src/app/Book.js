@@ -2,6 +2,8 @@ import React, {useState} from 'react'
 import { useNavigate } from 'react-router-dom'
 import NavBar from "../components/NavBar";
 import "../style/Booking.css"
+import Footer from "../components/Footer"
+
 
 const baseUrl = process.env.REACT_APP_BASE_URL;
 
@@ -14,6 +16,8 @@ const generateTimeSlots = () => {
     return slots;
 };
 
+
+
 const availableTimeSlots = generateTimeSlots();
 
 const Booking = () => {
@@ -25,7 +29,8 @@ const Booking = () => {
         timeStart: "",
         timeEnd: "",
     })
-
+    const [isModalOpen, setIsModalOpen] = useState(false);
+    
     const navigate = useNavigate()
 
     const handleChange = (e) => {
@@ -60,13 +65,19 @@ const Booking = () => {
         }
     } 
 
+    const toggleModal = () => {
+        setIsModalOpen(!isModalOpen);
+    };
+
     return (
+        <div>
         <div id="book-page">
             <NavBar />
             <div className="body-book">
                 <div className="wrapper-book">
                     <form onSubmit={handleSubmit} className="book-form">
                         <h1>Đặt sân</h1>
+                        <button className="btn" onClick={toggleModal}>Xem bảng giá</button>
                         <div className="inputbox">
                             <input type="text" name="name" placeholder="Tên" value={formData.name} onChange={handleChange} required />
                         </div>
@@ -80,28 +91,48 @@ const Booking = () => {
                             <label>Chọn ngày:</label>
                             <input type="date" name="date" value={formData.date} onChange={handleChange} required />
                         </div>
-                        <div className="inputbox">
-                            <label>Thời gian bắt đầu:</label>
-                            <select name="timeStart" value={formData.timeStart} onChange={handleChange} required>
-                                <option value="">Select Start Time</option>
-                                {availableTimeSlots?.map((time, index) => (
-                                    <option key={index} value={time}>{time}</option>
-                                ))}
-                            </select>
+                        <div className='time-box'>
+                            <div className="inputbox">
+                                <label>Thời gian bắt đầu:</label>
+                                <select name="timeStart" value={formData.timeStart} onChange={handleChange} required>
+                                    <option value="">chọn thời gian bắt đầu</option>
+                                    {availableTimeSlots?.map((time, index) => (
+                                        <option key={index} value={time}>{time}</option>
+                                    ))}
+                                </select>
+                            </div>
+                            <div className="inputbox">
+                                <label>Thời gian kết thúc:</label>
+                                <select name="timeEnd" value={formData.timeEnd} onChange={handleChange} required>
+                                    <option value="">chọn thời gian kết thúc</option>
+                                    {availableTimeSlots?.map((time, index) => (
+                                        <option key={index} value={time}>{time}</option>
+                                    ))}
+                                </select>
+                            </div>
                         </div>
-                        <div className="inputbox">
-                            <label>Thời gian kết thúc:</label>
-                            <select name="timeEnd" value={formData.timeEnd} onChange={handleChange} required>
-                                <option value="">Select End Time</option>
-                                {availableTimeSlots?.map((time, index) => (
-                                    <option key={index} value={time}>{time}</option>
-                                ))}
-                            </select>
-                        </div>
+                
                         <button type="submit" className="btn">Đặt sân</button>
                     </form>
+
+                    {/* Modal for priceboard */}
+                    {isModalOpen && (
+                        <div className="modal-overlay">
+                        <div className="modal-content">
+                            <button className="close-btn" onClick={toggleModal}>X</button>
+                            <img
+                            src="/assets/priceboard.jpg"
+                            alt="Priceboard"
+                            className="priceboard-image"
+                            />
+                        </div>
+                        </div>
+                    )}
                 </div>
             </div>
+            
+        </div>
+        <Footer />
         </div>
     )
 }

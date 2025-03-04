@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 
 const baseUrl = process.env.REACT_APP_BASE_URL;
@@ -10,6 +10,8 @@ const ResetPassword = () => {
     const [confirmPassword, setConfirmPassword] = useState("");
     const [message, setMessage] = useState("");
 
+    const navigate = useNavigate()
+    
     const handleSubmit = async (e) => {
         e.preventDefault();
 
@@ -26,6 +28,7 @@ const ResetPassword = () => {
         try {
             const { data } = await axios.post(`${baseUrl}/api/users/reset-password/${token}`, { password, confirmPassword });
             setMessage(data.message);
+            navigate("/login")
         } catch (error) {
             setMessage(error.response?.data?.message || "Error resetting password");
         }

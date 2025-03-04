@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import NavBar from "../components/NavBar"
 import 'boxicons'
 import '../style/Login.css'
@@ -68,18 +68,22 @@ const Register = () => {
                     <form onSubmit={handleSubmit} className="login-form">
                         <h1>Register</h1>
                         <div className="input-box">
-                            <input type="text" name="name" placeholder="Name" value={name} onChange={handleChange} required />
+                            <input type="text" name="name" placeholder="Tên" value={name} onChange={handleChange} required />
                         </div>
                         <div className="input-box">
                             <input type="email" name="email" placeholder="Email" value={email} onChange={handleChange} required />
                         </div>
                         <div className="input-box">
-                            <input type="password" name="password" placeholder="Password" value={password} onChange={handleChange} required />
+                            <input type="password" name="password" placeholder="Mật Khẩu" value={password} onChange={handleChange} required />
                         </div>
                         <div className="input-box">
-                            <input type="password" name="accessKey" placeholder="Access Key" value={accessKey} onChange={handleChange} required />
+                            <input type="password" name="accessKey" placeholder="Admin code" value={accessKey} onChange={handleChange} required />
                         </div>
-                        <button type="submit" className="btn">Register</button>
+                        <button type="submit" className="btn">Tạo tài khoản</button>
+
+                        <div className="register-link">
+                            <p>Đã có tài khoản? <Link to="/login">Đăng nhập</Link></p>
+                        </div>
                     </form>
                 </div>
             </div>
