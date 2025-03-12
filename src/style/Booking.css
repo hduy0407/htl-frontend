@@ -4,7 +4,7 @@
     background: linear-gradient(rgba(35, 35, 35, 0.215), rgba(60, 59, 59, 0.75)), url('/assets/backgroundbookingpage.jpg') no-repeat;
     background-size: cover;
     background-position: center;
-    height: 100vh; 
+    min-height: 100vh; 
     justify-content: center;
     align-items: center;
     position: relative;
@@ -17,10 +17,11 @@
     align-items: center;
 
     height: auto; /* Adjust height based on content */
-    max-height: 90vh; /* Prevents overflow */
+    max-height: 80vh; /* Prevents overflow */
     margin-top: 20px; 
     margin: 0 auto; 
-    margin-top: 60px;
+    padding-bottom: 50px;
+    flex: 1; /* Pushes the footer down */
 }
 
 .wrapper-book {

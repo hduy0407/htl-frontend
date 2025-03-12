@@ -1,0 +1,62 @@
+.container-confirmation {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    width: 100%;
+    height: 100vh;
+    background: #758ab5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container-confirmation .wrapper {
+    width: 400px;
+    background: #fff;
+    border-radius: 12px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    text-align: center;
+    transform: translate(-50%, -50%);
+    padding: 0 30px 30px;
+    color: #333;
+}
+
+.container-confirmation .wrapper .tick {
+    font-size: 80px;
+    margin-top: -50px;
+    border-radius: 50%;
+    width: 90px;
+    height: 90px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    background-color: rgb(87, 107, 184);
+    color: #ffffff;
+}
+
+.container-confirmation .wrapper h2 {
+    font-size: 38px;
+    font-weight: 500;
+    margin: 30px 0 10px;
+}
+
+.container-confirmation .wrapper .btn {
+    width: 90%;
+    height: 60px;
+    margin: 40px 0 10px;
+    padding: 10px 0;
+    background: rgb(87, 107, 184);
+    color: #fff;
+    border: 0;
+    outline: none;
+    font-size: 18px;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow:  0 2px 5px rgba(0, 0, 0, 0.2);;
+}
+
+.container-confirmation .wrapper .btn:hover {
+    background: rgb(55, 69, 122);
+}

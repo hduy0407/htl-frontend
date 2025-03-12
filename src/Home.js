@@ -25,7 +25,7 @@ function Home() {
         </div>
       </div>
       <Location />
-      <hr className="custom-hr" />
+      
       <PriceBoard />
       <Footer />
     </div>

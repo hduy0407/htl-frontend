@@ -1,0 +1,125 @@
+.about-page {
+    background-color: #eff2f7;
+}
+
+.about-page .header {
+    background-image: url('/assets/aboutpage.jpg') ;
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat;
+    height: 50vh; 
+    width: 100%; 
+    position: relative;
+}
+
+.about-page .header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.58); /* Adjust opacity (0.5 = 50% darkness) */
+}
+
+.about-page .header .navbar {
+    position: relative; 
+    z-index: 2;
+}
+
+.about-page .header .title {
+    position: absolute;
+    top: 60%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    color: white; 
+    font-size: 2rem; 
+    text-align: center; 
+}
+
+.about-page .holder {
+    display: flex; /* Enable flexbox */
+    flex-direction: row; /* Align elements horizontally (left and right) */
+    justify-content: space-between; /* Distribute space between child elements */
+    align-items: center; 
+    padding: 20px;
+    margin: 20px 0;
+    text-align: center;
+}
+
+.about-page .holder .container-text,
+.about-page .holder-3 .container-text {
+    max-width: 800px; 
+    width: 100%;
+    margin: 0 auto; 
+    padding: 20px;
+    text-align: center; 
+}
+
+.about-page .holder iframe {
+    width: 48%;
+    height: 420px;
+    margin: 20px;
+}
+
+.about-page .holder img {
+    width: 48%;
+    height: auto;
+    max-width: 600px;
+    display: block;
+    margin: 20px;
+}
+
+.about-page .holder-3 .img-container {
+    display: flex;
+    flex-wrap: wrap; /* Allow images to wrap if needed */
+    justify-content: center;
+    gap: 45px; /* Space between images */
+}
+
+.about-page .holder-3 .img-container img {
+    width: 50%; /* Adjust for 3 images in a row */
+    max-width: 350px;
+    height: auto;
+    border-radius: 2px; /* Optional: rounded corners */
+}
+
+.about-page .holder .title,
+.about-page .holder-3 .title {
+    font-size: 1.9rem; 
+    color: inherit; 
+    text-align: center; 
+    margin-bottom: 20px; 
+    padding: 0; 
+}
+
+.about-page .holder .container-text p,
+.about-page .holder-3 .container-text p {
+    color: #666f7b;
+}
+
+@media (max-width: 768px) {
+    .about-page .holder {
+        flex-direction: column; 
+        text-align: center;
+    }
+
+    .about-page .holder img,
+    .about-page .holder iframe {
+        order: 1; 
+        width: 100%; 
+        max-width: 90%;
+    }
+
+    .about-page .holder .container-text {
+        width: 100%;
+        padding: 10px;
+        text-align: center;
+        order: -1; 
+    }
+
+    .about-page .holder-3 .img-container img {
+        width: 70%; 
+        height: auto;
+    }
+}
